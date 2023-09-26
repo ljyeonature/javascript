@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 새로운 for 문장 </title>
+<script type="text/javascript">
+
+var  arr = ['송혜교', '김태희', '전지현' ];
+
+// 0. 원래 for
+for(var i = 0; i < arr.length; i++) {
+    document.writeln(arr[i] + '<br />');
+}
+
+// 객체
+var obj = {title : '자바스크립트'
+            , publisher : 'ICT'
+            , writer : '홍길동'};
+
+// 1. for...in :  요소를 순서대로 처리하기
+// 인덱스 값으로 출력 -> arr[i]로 해줘야 값이 나옴.
+for( var i in arr ) {
+    document.writeln(arr[i] + '<br />');
+}
+
+// 객체일 때는 키값으로 출력
+// 객체명.변수명 => 객체명['변수명']
+for( var i in obj ) {
+    document.writeln(obj[i] + '<br />');
+}
+
+//----------------------------------------------------
+// 2. for...of  (es6) : 열거형의 요소를 순서대로 처리하기
+// 배열 각각의 요소를 출력
+for( var i of arr ) {
+    document.writeln(i + '<br />');
+}
+
+// 객체는 열거형이 아니기 때문에 for-of를 사용할 수 없다.
+// for( var i of obj ) {
+//     document.writeln(i+ '<br />');
+// }
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

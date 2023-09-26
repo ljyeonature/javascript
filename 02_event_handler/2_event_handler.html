@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+
+<!-- 앞에서부터 읽었는데, btn에 id? 이거 뭐야? 해서 오류 -->
+<!-- script가 head에 있을 때. -->
+<!-- 그래서 윈도우가 떴을 때(메모리에 올랐을 때)
+      이벤트 함수 실행하면 괜츈!
+-->
+<script>
+
+  window.onload = function() {
+
+    var btn = document.getElementById("btn");
+  
+    btn.onclick = function() {
+      alert('이벤트발생0');
+    };
+    
+  }
+  
+</script>
+  </head>
+ <body>
+  <!-- 화면을 읽었어 -->
+	<input type='button' value='눌러'  id='btn' />
+ </body>
+</html>

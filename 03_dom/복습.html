@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습.html</title>
+    <style>
+        td {
+            color  : lightskyblue;
+            width  :  100px;
+            height : 70px;
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+            //  배열(td)
+            var tds = document.getElementsByTagName('td');
+            for(var i = 0; i < tds.length; i++) {
+                tds[i].onclick = function() {
+                    var menu  = this.innerHTML;
+                    var price = this.getAttribute('price');
+                    alert(`${menu} : ${price}원`);
+                }
+            }
+
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <table border='1'>
+        <tr>
+            <!-- 사용자 정의 속성 사용 가능 : 가격 속성 -->
+            <td price='100'>자장면</td>
+            <td price='200'>짬뽕</td>
+        </tr>
+        <tr>
+            <td price='50'>콜라</td>
+            <td price='65'>사이다</td>
+        </tr>
+
+
+    </table>
+    
+</body>
+</html>

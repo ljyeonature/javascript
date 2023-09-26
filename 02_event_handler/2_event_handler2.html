@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+
+  </head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />
+	<script>
+   
+	   var btn = document.getElementById("btn");
+   
+	   btn.onclick = btn_click;
+	   
+	   function btn_click() {
+			alert('이벤트발생');
+	};
+	   
+   </script>
+ </body>
+</html>

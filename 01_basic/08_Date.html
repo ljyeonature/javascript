@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	// var d = new Date('2023/09/26');
+	var d = new Date();
+	// Tue Sep 26 2023 00:00:00 GMT+0900 (한국 표준시)
+	document.writeln( d  + '<br/>');
+	// 123
+	document.writeln( d.getYear()  + '<br/>');
+	// 2023 => 연도는 무조건 FullYear
+	document.writeln( d.getFullYear()  + '<br/>');
+	// 8 => Month + 1
+	document.writeln( d.getMonth()  + '<br/>');
+	// 26
+	document.writeln( d.getDate()  + '<br/>');
+	// 2 => 화 : 일요일이 0이에요.
+	document.writeln( d.getDay()  + '<br/>');
+
+	// 날짜 지정
+	var naljja = new Date();
+	naljja.setFullYear(2023);
+	naljja.setMonth(12-1);
+	naljja.setDate(25);
+	document.writeln('<hr />' + naljja + '<hr />');
+
+	document.writeln('<hr />' + naljja.toLocaleDateString() + '<hr />');
+	document.writeln('<hr />' + naljja.toGMTString() + '<hr />');
+	document.writeln('<hr />' + naljja.toDateString() + '<hr />');
+	
+	var today = new Date();
+	today.setMonth(today.getMonth() +  4);
+	document.writeln('<hr />' + today.toDateString() + '<hr />');
+	// today에 30일을 뺀다면?
+	// today.setDate(today.getDate() - 30);
+	// 전달의 마지막날
+	today.setDate(0);
+	document.writeln(today.toDateString() + '<hr />');
+	// today.setMonth(today.getMonth() - 1);
+	document.writeln('<hr />' + today.toDateString() + '<hr />');
+
+
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 자료형</title>
+<script type="text/javascript">
+
+/* 1. 자바스크립트는 데이터타입에 관대하다
+     변수를 선언할 때 데이타타입을 정하지 않는다
+		(1) 변수 선언 : var
+*/
+
+var byensu = "문자열";
+console.log("변수의 값");
+document.writeln("1. 변수의 값:" + byensu + '<br />');
+console.log(typeof byensu );
+
+byensu = 1000;
+console.log("변수의 값");
+document.writeln("2. 변수의 값:" + byensu + '<br />');
+console.log(typeof byensu );
+
+
+/*   (2) let  (es6)
+ 		- 변수의 중복 선언을 허용하지 않는다
+ 		- 블럭 범위(scope)를 인식한다 -> 나중에 확인
+ */
+var byensu = "변수";
+document.writeln("3. 변수의 값:" + byensu + '<br />');
+
+let msg = "기존";
+document.writeln("4. 메시지:" + msg + '<br />');
+
+msg = 1000;
+document.writeln("5. 메시지:" + msg + '<br />');
+
+// SyntaxError: Identifier 'msg' has already been declared
+// let msg = "변경";
+// document.writeln("6. 메시지:" + msg + '<br />');
+
+
+ /* (3) const : 상수선언 (es6)
+	- 값을 재대입 금지
+	- 명명 권장 : 모두 대문자에 단어사이는 _로 표시
+*/
+
+// TypeError: Assignment to constant variable.
+const PI = 3.14;
+// PI = 0.0000314;
+// document.writeln("6. 파이:" + PI + '<br />');
+
+// 기본형과 자료형의 개념적인 것 - 메모리적으로
+// const data = [1,2,3];
+document.writeln("data : " + data + '<br />');
+// data = [11,12,13]; 
+// data[0] = 100;
+// data[1] = 200;
+// data[2] = 300;
+document.writeln("data : " + data + '<br />');
+
+console.log("let")
+let array = [10,11,12];
+console.log(array);
+array[0] = 50;
+// array = [1,2,3];
+console.log(array);
+
+//----------------------------------------------------------------
+// 2. 리터럴 - 변수의 값
+var   arr = [ '안녕', 'Hello', 'Hola', '곤니찌와' ];
+document.writeln(arr[2] + '<br/>');
+
+var   arr2 = [ '안녕', [ 'Hello', 'Hola' ], '곤니찌와' ];
+document.writeln(arr2[1][1] + '<br/>');
+
+var  obj = { x : '안녕',  y : 'Hello' ,  z : '곤니찌와' };
+document.writeln(obj.y + '<br/>');
+console.log(obj.y)
+document.writeln(obj['y'] + '<br/>');
+console.log(obj['y']);
+
+var x;
+document.writeln(x + '<br/>');
+document.writeln(obj.a + '<br/>');
+
+//-------------------------------------------------------
+/* 3. 분할 대입 (destructuring assignment) : (es6)
+ 			- 배열과 객체의 요소를 분할하는 부분
+ 		(1) 배열 분할
+ */
+ var data = [10, 20, 30, 40, 50];
+//  var a0 = data[0];
+//  var a1 = data[1];
+//  var a2 = data[2];
+//  document.writeln(a0+ a1+ a2 + "<br/>");  
+//  console.log(a0, a1, a2 );
+
+ var [a,b,c,d,e] = data;
+ document.writeln(a+b+c + "<br/>");
+ 
+ var [a,b, ...other] = data;
+ document.writeln(a + "<br/>");
+ document.writeln(b + "<br/>");
+ document.writeln(other + "<br/>");
+
+ var [a,b, other] = data;
+ document.writeln(a + "<br/>");
+ document.writeln(b + "<br/>");
+ document.writeln(other + "<br/>");
+ 
+ let v1 = 100;
+ let v2 = 200;
+ //swipping
+ [v1,  v2] = [v2, v1]
+ document.writeln("v1 - " + v1 + " / " + "v2 - " + v2 + "<br/>");
+ console.log(v1);
+ console.log(v2);
+ 
+ /*  (2) 객체 분할
+  */
+
+let book = {title : "자바스크립트", 
+  				publish : "JPUB", 
+				price : 30000
+			};
+let {title, publish} = book;
+console.log("제목 : " + title);
+console.log("출판사 : " + publish);
+document.writeln("제목 : " + title + "<br/>");
+document.writeln("출판사 : " + publish + "<br/>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

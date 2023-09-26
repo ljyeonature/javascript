@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_for연습.html</title>
+
+    <script type="text/javascript">
+    //     var table = document.getElementById("table");
+    //     var tr = document.getElementById("tr");
+    //     var td = document.getElementById("td");
+    //     table.innerHTML(tr);
+    //     for(var i = 1; i <= 5; i++){
+    //         for(var j = 1; j <= 5; j++){
+    //             tr.innerHTML(td);
+    //     }
+    // }
+        document.writeln("<table border='2'>");
+        var a = 1;
+        for(var i = 1; i <= 5; i++){
+            document.writeln('<tr>');
+                for(var j = 1; j <= 5; j++){
+                    document.writeln('<td>' + a + '</td>')
+                a++;
+            }
+            document.writeln('</tr>');
+        }
+        document.writeln("</table>");
+
+    </script>
+</head>
+<body>
+    <!-- <table id="table" border='2'>
+        <tr id="tr">
+            <td id="td">1</td>
+            <td id="td">2</td>
+            <td id="td">3</td>
+            <td id="td">4</td>
+            <td id="td">5</td>
+        </tr>
+    </table> -->
+</body>
+</html>

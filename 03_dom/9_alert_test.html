@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Alert Test </title>
+<script type="text/javascript">
+
+	window.onload = function(){
+		// 1. alert -> 개발자용...
+		// 사용자 입장에서 alert 성질남.
+		window.alert('이 페이지는 이사감');
+		// window.location.href = 'https://ictedu.co.kr/index.php?main_page=home&gclid=CjwKCAjw38SoBhB6EiwA8EQVLpf3eW2I9vdKg6XmK8MvoiDWjgkS_xOiXCtqLXTHZV0LdhjfDyxQZhoCgLAQAvD_BwE#'
+		// location.href = 'https://ictedu.co.kr/index.php?main_page=home&gclid=CjwKCAjw38SoBhB6EiwA8EQVLpf3eW2I9vdKg6XmK8MvoiDWjgkS_xOiXCtqLXTHZV0LdhjfDyxQZhoCgLAQAvD_BwE#'
+		// window.location = 'https://ictedu.co.kr/index.php?main_page=home&gclid=CjwKCAjw38SoBhB6EiwA8EQVLpf3eW2I9vdKg6XmK8MvoiDWjgkS_xOiXCtqLXTHZV0LdhjfDyxQZhoCgLAQAvD_BwE#'
+		
+		// 2. confirm
+		// var response = confirm('페이지 이사감. 이동하시겠습니까?');
+		// if(response) {
+		// 	window.location = 'https://ictedu.co.kr/index.php?main_page=home&gclid=CjwKCAjw38SoBhB6EiwA8EQVLpf3eW2I9vdKg6XmK8MvoiDWjgkS_xOiXCtqLXTHZV0LdhjfDyxQZhoCgLAQAvD_BwE#'
+		// }
+		// alert(response);
+
+		// 3. prompt : 
+		var input = prompt('이동할 사이트를 입력하세요');
+		location.href = input;
+	}
+
+</script>
+</head>
+<body>
+이 사이트는 조만간 운영하지 않습니다.
+</body>
+</html>

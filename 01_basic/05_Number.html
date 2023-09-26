@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+var su = 123.456789;
+// 지수 형식 표기
+document.writeln( su.toExponential(2)  + "<br/>" );	
+// 소수점 뒷자리 3자리 반올림
+document.writeln( su.toFixed(3)  + "<br/>" );		
+// 소수점 뒷자리 7자리 반올림
+document.writeln( su.toFixed(7) + "<br/>" );	
+// 전체 자릿수 에서 6자리에서 반올림
+document.writeln( su.toPrecision(6)  + "<br/>" );	 
+// 전체 자릿수 에서 10자리에서 반올림 - > 없으면 채우기
+document.writeln( su.toPrecision(10)  + "<br/>" );	
+
+//-------------------------------------------------
+// 2. 형변환
+// 문자
+var n = '0770';
+
+document.writeln(typeof n + '<br />');
+document.writeln( Number(n) + '<br />');
+document.writeln( parseInt(n) + '<br />');
+document.writeln( typeof parseInt(n) + '<hr />');
+
+var n = '123abc';
+// NaN : Not a Number : 숫자가 아닌 것이 있기 때문에 NaN.
+document.writeln( Number(n) + '<br />');
+// 숫자가 있기에 123만 숫자로!
+document.writeln( parseInt(n) + '<hr />');
+
+// 자동형변환
+// 더하기는 문자열 더하기로 인식
+var v = '123' + 4;
+document.writeln(v + "<br/>");
+// 뺄 때는 문자를 숫자로 연산
+var v = 123 - '4';
+document.writeln(v + "<br/>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
