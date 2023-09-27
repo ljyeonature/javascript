@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5_form_html</title>
+</head>
+<body>
+    <!-- form 태그에는 input태그가 하나 있으면 Enter로 검색 가능 -->
+    <form action = 'a.jsp'>
+        <input type="search" name="search" placeholder="검색할 단어를 입력하세요" />
+        <input type="submit" value="검색" />
+    </form>
+    <hr />
+
+    <form action="b.jsp">
+        <input  type="hidden" name="secret" value="클라이언트 모르게 넘어가는 값" />
+        <input type="submit" value="계산" />
+
+    </form>
+</body>
+</html>

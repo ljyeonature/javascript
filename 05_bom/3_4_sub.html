@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sub.html</title>
+    <script>
+        window.onload = function() {
+            var selLoc = frm.local;
+            for(var i = 0; i < selLoc.length; i++){
+                selLoc[i].onclick = function() {
+                    switch(this.value){
+                         case '0' : opener.form.local.value = "가산"; break;
+                         case '1' : opener.form.local.value = "판교"; break;
+                         case '2' : opener.form.local.value = "부평"; break;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form name="frm">
+		<input type="text" name="super" >
+		<hr/>
+		<input type="radio" name="local" value='0'> 가산 <br>
+		<input type="radio" name="local" value='1' > 판교 <br>
+		<input type="radio" name="local" value='2'> 부평 <br>
+	</form>
+</body>
+</html>

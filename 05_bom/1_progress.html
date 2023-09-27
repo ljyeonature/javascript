@@ -14,9 +14,11 @@
 	var progress = document.getElementById("progress");
 	var current = 0;
 
-	
-	
-	
+
+	setInterval(function() {
+		progress.value = ++current;
+	}, 100);
+
 
 	/* [참고]
 	window.setInterval(func, time) : time 시간 간격으로 반복 처리를 한다

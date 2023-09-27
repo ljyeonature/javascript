@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super.html</title>
+</head>
+<body>
+    <form name="form">
+        <!-- name이랑 id랑 같이 다 쓰자 -->
+        <select id="region" name="region">
+            <option name="region">서울시</option>
+            <option name="region">수원시</option>
+        </select>
+        <input type="text" name="local"/>
+
+    </form>
+    <script>
+
+        var subWin = window.open('3_4_sub.html',"","width=500, height=650");
+
+        region.onchange = function() {
+            subWin.frm.super.value = form.region.value;
+        }
+        
+
+    </script>
+</body>
+</html>

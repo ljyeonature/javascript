@@ -27,7 +27,17 @@
 <meta charset="UTF-8">
 <title> window 예제 </title>
 <script type="text/javascript">
+window.onload = function() {
 
+	var sel = frm.chooseSite;
+	// 함수명 생략한 코딩
+	sel.onchange = function(){	
+		// window.open("사이트명","이름","크기지정")
+		var winObj = window.open(sel.value,"newWin","width=500, height=650");
+
+		winObj.moveTo(screen.availWidth/4, screen.availHeight/4);
+	}
+}
 	
 </script>
 </head>

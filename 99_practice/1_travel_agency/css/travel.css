@@ -22,4 +22,24 @@ body {
 	color: #00769D;
 	font-weight: bold;
 }
+#submitBtn {
+	position: absolute;
+	width: 84px;
+	height: 27px;
+	border-radius: 8px;
+	left: 50px;
+}
 
+#imgBtn{
+	background-image: url('../img/travel_button_01.gif');
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 84px;
+	height: 27px;
+	border: 0px;
+	outline: 0;
+	cursor: pointer;
+	position: relative;
+	bottom: 0.5px;
+
+}

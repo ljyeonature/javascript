@@ -20,7 +20,7 @@
 //오늘 날짜 구하기
 var today = new Date();
 var year = today.getFullYear();
-var month = today.getMonth();
+var month = today.getMonth(); // 8
 var date = today.getDate();
 
 var lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -32,10 +32,59 @@ window.onload = function(){
 	var frm = document.frm;
 	
 	// 년 구하기
-	for( var j=year-5;  j<= year+5; j++){
-		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+	for( var j=year-23;  j<= year+10; j++){
+		frm.y.add( new Option(j, j));		// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
 	}
 
+	// 월 구하기
+	for( var i=month-today.getMonth()+1; i <= 12; i++ ) {
+		frm.m.add(new Option(i,i));
+	}
+
+	// 일 구하기
+	// 1~lastDays[k]
+
+	for( var i=1; i <= lastDays[month]; i++) {
+		frm.d.add(new Option(i,i))
+	}
+
+	// 화면에 오늘 날짜에 지정
+	frm.y.value = year;
+	frm.m.value = month+1;
+	frm.d.value = date;
+	frm.w.value = weeks[today.getDay()];
+	
+	// 이벤트 연결
+	frm.y.onchange = cal;
+	frm.m.onchange = cal;
+	frm.d.onchange = cal;
+	
+	function cal() {
+		// 각 년, 월, 일을 얻어와서 요일 출력
+		var selCal = new Date();
+		var y = frm.y.value;
+		var m = frm.m.value;
+		var d = frm.d.value;
+		selCal.setFullYear(y);
+		selCal.setMonth(m-1);
+		selCal.setDate(d);
+		frm.w.value = weeks[selCal.getDay()];
+
+		// 윤년구하기
+		// 4로 나누어 떨어지고 / 100으로 나누어 떨어지지 않거나 400으로 나누어 떨어질 때
+		if((y % 4 == 0 && y % 100 != 0) || y % 400 == 0){
+			lastDays[1] =  29;
+		} else {
+			lastDays[1] =  28;
+		}
+
+		// 해당 월에 맞는 일 구하기
+		frm.d.options.length = 0; // 원래 만들어 놓았던 거 지우기
+		for(var k=1; k <= lastDays[m-1]; k++){
+			frm.d.add(new Option(k,k));
+		}
+		frm.d.value = d;
+	}
 }
 </script>
 

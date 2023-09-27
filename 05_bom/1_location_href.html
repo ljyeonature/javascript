@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="euc-kr">
-<title> window ¿¹Á¦ </title>
+<meta charset="utf-8">
+<title> window ì˜ˆì œ </title>
 <script type="text/javascript">
 
 		/*
-		1. ¼±ÅÃÇÑ ¿É¼ÇÀÇ °ª(value)À» ¾ò¾î¿Â´Ù.
-		2. location °´Ã¼ÀÇ href ÇÁ·ÎÆÛÆ¼¿¡ urlÀ» ÁöÁ¤
+		1. ì„ íƒí•œ ì˜µì…˜ì˜ ê°’(value)ì„ ì–»ì–´ì˜¨ë‹¤.
+		2. location ê°ì²´ì˜ href í”„ë¡œí¼í‹°ì— urlì„ ì§€ì •
 		*/
+
+		window.onload = function() {
+			var sel = frm.chooseSite;
+			// var sel = document.getElementById('chooseSite');
+			sel.onchange = function() {
+				// window.location.href = sel.value;
+				// ë’¤ë¡œ ê°€ê¸° ì—†ìŒ
+				// location.replace(sel.value);
+				// =================================
+				// widow.setTimeout(  ,2000 );
+				// setTimeout(í•¨ìˆ˜ëª…,ì´ˆ)
+				// window.setTimeout(func, 2000);
+				// function func() {
+				// 	location.href = sel.value;
+				// }
+				//==================================
+				// window ìƒëµí˜•
+				setTimeout(function() {
+					location.href = sel.value;
+				}, 2000);
+			}
+		}
+		// 
 
 
 </script>
 </head>
 <body>
 	<form name="frm">
-		<h1> ÀÌµ¿ÇÏ±æ ¿øÇÏ´Â ÆäÀÌÁö¸¦ ¼±ÅÃÇÏ¼¼¿ä </h1>
+		<h1> ì´ë™í•˜ê¸¸ ì›í•˜ëŠ” í˜ì´ì§€ë¥¼ ì„ íƒí•˜ì„¸ìš” </h1>
 		<select name="chooseSite" id='chooseSite'>
-			<option>°ñ¶ó °ñ¶ó</option>
-			<option value="http://www.daum.net">´ÙÀ½³×</option>
-			<option value="http://www.naver.com">³×ÀÌ¹Ù</option>
-			<option value="http://www.nate.com">³×ÀÌ¶Ç</option>
+			<option>ê³¨ë¼ ê³¨ë¼</option>
+			<option value="http://www.daum.net">ë‹¤ìŒë„¤</option>
+			<option value="http://www.naver.com">ë„¤ì´ë°”</option>
+			<option value="http://www.nate.com">ë„¤ì´ë˜</option>
 		</select>
 	</form>
 </body>

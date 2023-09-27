@@ -4,6 +4,47 @@
 <meta charset="UTF-8">
 <title> 폼 예제 3 </title>
 <script type="text/javascript">
+	window.onload = function(){
+		// 창 열자마자 오늘 날짜 뜨게 한다.
+		var today = new Date();
+		frm1.y.value = today.getFullYear();
+		// 1을 더해줘야 하는건가?
+		frm1.m.value = today.getMonth()+1;
+		frm1.d.value = today.getDate();
+		// 메모리에 있는 btn => 상상의 나래
+		cal();
+
+		document.querySelector('#btn').onclick = cal;
+		
+		// 2번 이상 쓰이는 함수
+		function cal() {
+			// alert("ok");
+			// 입력한 값 가져오기
+			var y = frm1.y.value;
+			var m = frm1.m.value;
+			var d = frm1.d.value;
+
+			// 년월일을 지정할 때는 월을 -1 안해도 되는데
+			var myDate = new Date(y+"/" + m + "/" + d);
+			var myDate = new Date();
+			// 하나하나 지정할 때는 월은 -1을 해야 한다.
+			// myDate.setFullYear(y);
+			// myDate.setMonth(m-1);
+			// myDate.setDate(d);
+			// myDate.getDay() => 0:일
+			// alert(myDate.getDay());
+			var day = frm1.w.value;
+			var day = ['일','월','화','수','목','금','토','일'];
+			frm1.w.value = day[ myDate.getDay() ];
+			// for(var i = 0; i < day.length; i++){
+			// 	if(myDate.getDay() == i) {
+			// 		frm1.w.value = day[i];
+			// 		break;
+			// 	}
+			// }
+		}
+
+	}
 
 </script>
 </head>
