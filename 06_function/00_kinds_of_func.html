@@ -6,11 +6,40 @@
 	<script>
 	// 1. function 명령(선언)
 
+	// function triangle(base, height) {
+	// 	return base * height / 2;
+	// }
+	// document.writeln('삼각형의 넓이:' + triangle(4,3) + '<br / >');
+
 	
 	// 2. 함수리터럴   * 리터럴 : 변수의 값		
-
-
+	// var triangle = function (base, height) {
+	// 	return base * height / 2;
+	// }
+	// document.writeln('삼각형의 넓이:' + triangle(4,3) + '<br / >');
+	
+	
 	// 3. 애로우함수
+	// var triangle = (base, height) => base * height / 2;
+	
+	// document.writeln('삼각형의 넓이:' + triangle(4,3) + '<br / >');
+
+
+	function add(x,y) {
+		return x + y;
+	}
+	document.writeln('전체 합 : ' + add(10,20));
+
+	var add = (x,y) => { 
+		return x + y
+	};
+	document.writeln('전체 합 : ' + add(10,20));
+	
+	var add = (x,y) => x + y;
+	document.writeln('전체 합 : ' + add(10,20));
+
+
+	
 
 	
 	</script>

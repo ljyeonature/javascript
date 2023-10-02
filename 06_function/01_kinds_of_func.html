@@ -4,7 +4,26 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
-	
+	// 1. function 명령어 함수
+	function first() {
+		let txt = document.getElementById('first');
+		txt.style.color = 'yellow';
+		txt.style.backgroundColor = 'red';
+	}
+	// 2. 리터럴
+	var second = function () {
+		let txt = document.getElementById('second');
+		txt.style.color = 'blue';
+		txt.style.backgroundColor = 'yellow';
+	}
+	// 3. 에로우
+	var third = () => {
+		let txt = document.getElementById('fourth');
+		txt.style.color = 'red';
+		txt.style.backgroundColor = 'blue';
+	}
+
+
 	
 	</script>
 </head>

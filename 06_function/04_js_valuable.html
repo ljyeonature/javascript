@@ -5,6 +5,50 @@
 	<title>자바스크립트 변수와 범위</title>
 	<script>
 
+		// 1. 글로벌 변수와 지역 변수
+		var scope = '글로벌변수';
+		function getValue() {
+			var scope = '지역변수';
+			return scope;
+		}
+		document.writeln('1> ' + getValue() + '<br />'); // 지역변수
+		document.writeln('2> ' + scope + '<br />');      // 글로벌변수
+		
+		document.writeln('<hr/>' ); 
+
+		// 2. var 생략 가능
+		scope = '글로벌변수';
+		function getValue() {
+			var scope = '지역변수';
+			document.writeln('0> ' + scope + '<br />'); // undefined
+			// 함수 안에서의 변수는 지역 변수이지만,
+			// var가 없기 때문에 글로벌 변수로 취급
+			// var test  = '테스트';
+			return scope;
+		}
+		document.writeln('3> ' + getValue() + '<br />'); // 지역변수
+		document.writeln('4> ' + scope + '<br />');      // 지역변수
+		// document.writeln('5> ' + test + '<br />');      // 테스트
+
+		// 3. 지역변수는 함수블록에서만 유효하다
+		// 지역 변수는 함수 안에서만 가능
+		// 반복 제어문에서는 가능
+		if(true) {
+			var i = 100;
+		}
+		document.write('i= ' + i + '<br />');
+		
+		function test()  {
+			var j = 200;
+		}
+		// test();
+		// document.write('j= ' + j + '<br />');
+		
+		// a는 for문에서 증가 => 3
+		for(var a = 0; a < 3; a++){ }
+		for(var a = 0; a < 3; a++){ }
+		document.write('a= ' + a + '<br />');
+
 	</script>
 </head>
 

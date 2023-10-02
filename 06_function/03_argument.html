@@ -6,6 +6,19 @@
 <script type="text/javascript">
 
 //@함수는 인자의 갯수를 체크하지 않는다.
+function multiple(first, second) {
+    return first * second;
+}
+document.writeln('곱은 ' + multiple(2,3) + '<br />');
+// 곱은 6 : 인자가 더 많아도 상관 없음.
+document.writeln('곱은 ' + multiple(2,3,4) + '<br />');
+// 곱은 NaN = Not a Number : 인자가 적어도 자바스크립트는 큰 오류를 내보내지 않음
+document.writeln('곱은 ' + multiple(2) + '<br />');
+
+
+
+
+
 
 </script>
 </head>

@@ -8,14 +8,27 @@
 	//----------------------------------------------------------
 	//  함수이름도 인수(파라메터)가 될 수 있다. ( 고차함수 : higher-order function )
 	
-	
-	
-	
+	function testFunc(arg) {
+		// 알아서 배열로 잡힘
+		var data = document.frm.num;
+		if(arg == 'sum') {
+			sumResult = 0;
+			arrayProcess(data, sum);
+			alert('합 : ' + sumResult);
+		} else if (arg == 'square') {
+			squareResult = [];
+			arrayProcess(data, square);
+			alert('곱 : ' + squareResult);
+		}
+		
+	}
+
 	</script>
 </head>
 <body>
 	<form name="frm">
 		<label> 숫자를 입력하세요 
+			<!--  처음부터 배열로 들어옴 - name이 같다. -->
 		<input type="text" name="num" size="3" value="1"/>
 		<input type="text" name="num" size="3" value="2"/>
 		<input type="text" name="num" size="3" value="3"/>

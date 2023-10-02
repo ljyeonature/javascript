@@ -6,19 +6,50 @@
 <script>
  
 	// @ 1. 인수의 기본값(default) 지정
-   	function multiple( first, second )
+   	function multiple( first, second=2 )
 	{
 		return first * second;
 	}
 	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );
 	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );
+	// 곱은 6 : 자동으로  second=2로 지정
 	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 
+	document.writeln('<hr/>' ); 
 	
-
+	// 곱은 0 : null를 0으로 취급
+	// null은 값이 들어온 걸로 취급
+	document.writeln('곱은 ' +  multiple( 3, null ) + '<br/>'  );
+	// 곱은 0 : false를 0으로 취급
+	// false는 값이 들어온 걸로 취급
+	document.writeln('곱은 ' +  multiple( 3, false ) + '<br/>'  );
+	// 곱은 NaN : undefined 값이 없어요.
+	// 값이 없었기 때문에 기본값으로 지정한 second=2로 계산 가능
+	document.writeln('곱은 ' +  multiple( 3, undefined ) + '<br/>'  );
 	
+	document.writeln('<hr/>' ); 
 	
 	// @ 2. 가변길이 인수(...)
-
+	// 몇 개의 인자를 받을 지 모르겠다!
+	function sum(...nums) {
+		let result = 0;
+		for(let n of nums) {
+			result += n;
+		}
+		return result;
+	}
+	// function sum(...nums) {
+	// 	let result = 0;
+	// 	for(let n in nums) {
+	// 		result += nums[n];
+	// 	}
+	// 	return result;
+	// }
+	// 3
+	document.writeln(sum(1,2) + '<br />');
+	// 15
+	document.writeln(sum(1,2,3,4,5) + '<br />');
+	// 21
+	document.writeln(sum(1,2,3,4,5,6) + '<br />');
 	 
 		 
  

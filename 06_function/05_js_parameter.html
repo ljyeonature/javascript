@@ -4,6 +4,30 @@
 	<meta charset="UTF-8">
 	<title> 파라메터 인자</title>
 	<script>
+		// 1. 기본형 인자 (call by value) : 원본에 영향이 없다.
+		var pri = 10;
+		function priParam(pvalue) {
+			pvalue--;
+			return pvalue;
+		}
+		document.write('1> 기본형 인자 : ' + priParam(pri) + '<br />'); // 9
+		document.write('2> 기본형 인자 : ' + pri + '<br />'); 			// 10
+
+		// 2. 참조형 인자(call by reference)
+		// 배열 객체 함수
+		var ref = [1,2,3,4,5];
+		function  refParam(rvalue) {
+			// 스택 구조
+			rvalue.pop();
+			return rvalue;
+		}
+		document.write('1> 참조형 인자 : ' + refParam(ref) + '<br />'); // 1,2,3,4
+		// 왜? => 원본에 영향을 미쳤다..
+		document.write('2> 참조형 인자 : ' + ref + '<br />'); 			// 1,2,3,4
+
+
+
+
 
 	</script>
 </head>
