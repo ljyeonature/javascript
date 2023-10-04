@@ -16,7 +16,36 @@
 		//------ 함수 호출
 		add(10,20); 
 */
-		
+
+function add(a, b, c) {
+	var result = a + b;
+	// 즉시 실행 함수 -> 선언과 동시에
+	c(result);
+	/*
+	var resultFunc = function() {
+		return a + "+" + b + "=" + (a+b);
+	};
+	*/
+	// return c(result);
+	// return result;
+	return function() {
+				return a + "+" + b + "=" + (a+b);
+			};
+}
+/*
+var f = (result) => {
+	document.writeln('결과 : ' + result);
+}
+*/
+var returnVal = add(10, 
+				    20, 
+				    function(result) {
+						document.writeln('결과 : ' + result + "<hr />");
+						// return result;
+				    }
+				);
+// document.write('리턴값 : ' + returnVal);
+document.write('리턴값 : ' + returnVal());
 
 		
 		

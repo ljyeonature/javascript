@@ -8,6 +8,10 @@
 <script>
 
 //0. 	클래스 선언 -  생성자로 초기화하기
+//      클래스와 함수의 선언 방법이 같다.
+//      [권장] 함수명 소문자 시작 / 클래스명 대문자 시작
+//      생성자 함수 => 객체야(변수명 첫 글자 대문자)? 함수야(변수명 첫 글자 소문자)?
+/*
 function Student(id, name, dept){
 	this.id = id;
 	this.name = name;
@@ -26,6 +30,68 @@ var lee = new Student("002","이길동", "경영");
 
 document.write( kim.display() );
 document.write( lee.display() );
+*/
+
+// Student 클래스 선언
+// 생성자로 이름, 국어, 영어, 수학점수를 받아서 멤버변수에 저장
+// 멤버함수로 sum()은 전체 과목의 합과 이름을 출력
+
+// '홍길동', 99.88,77 생성하고 출력
+// '홍길자', 50.60,70 생성하고 출력
+
+// 객체도 변수명은 대문자로 시작하고 작성
+let Student = function (name, kor, eng, math) {
+	this.name = name;
+	this.kor  = kor;
+	this.eng  = eng;
+	this.math = math;
+	/*
+	this.sum = function() {
+		var total = kor + eng+math;
+		// document.write("합계:" + total + " / 이름:" + name);
+		document.write(name + "님 " + (kor+eng+math) + "점" + '<hr />');
+	}
+	*/
+	
+}
+/*
+Student.prototype.add = function() {
+	// this.kor += 10;
+	// this.eng += 10;
+	// this.math += 10;
+	document.write(this.name + "님 " + (this.kor) + "점" + '<br />');
+	// dong.total += this.kor + this.eng + this.math;
+	// document.write(this.name + "님 " + (this.kor+this.eng+this.math) + "점" + '<br />');
+}
+// 동적으로 나중에 추가
+Student.prototype.sum = function() {
+	var total = this.kor + this.eng + this.math;
+	document.write(this.name + "님 " + total + "점" + '<hr />');
+}
+*/
+
+// 여러개 속성 추가시 이렇게 여러개로 추가할 수 있음
+Student.prototype = {
+	sum : function() {
+		var total = this.kor + this.eng + this.math;
+		document.write(this.name + "님 " + total + "점" + '<hr />');
+	},
+	add : function() {
+		document.write(this.name + "님 " + (this.math) + "점" + '<br />');
+	}
+}
+
+var dong = new Student("홍길동",99,88,77);
+var ja   = new Student("홍길자",50,60,70);
+
+dong['add']();
+dong.sum();
+// 객체 안에서의 함수 호출 방법 => 많이 봐두기
+// dong['sum']();
+// 동적 추가
+ja['add']();
+ja.sum();
+// ja['sum']();
 
 </script>
 </body>

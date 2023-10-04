@@ -18,8 +18,29 @@
 		};
 
 		// 자식클래스
+		var Dog = function(){};
 
+		// 자바스크립트의 상속관계 정의 방법
+		Dog.prototype = new Animal(); // 상속관계 ( extends )
 
+		// 변수명 => 객체 생성
+		var dog = new Dog();
+
+		// 오버로딩 존재하지 않음 : 왜? 인자의 개수를 신경쓰지 않은데 필요하지 않음
+		// 오버라이딩 : 상속관계 있음 -> 부모의 함수가 맘에 들지 않아 바꿀 수 있음
+		// 오버라이딩
+		Dog.prototype.move = function() {
+			document.write('꼬리친다 <br />');
+		}
+		
+		dog.move();
+		dog.sound();
+
+		// 추가해서 사용(자식)
+		Dog.prototype.bark = function() {
+			document.write('멍멍짖다 <br />');
+		}
+		dog.bark();
 
 	</script>
 </body>

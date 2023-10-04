@@ -12,6 +12,34 @@
 //			호출되는 함수가 참조하는 함수의 메모리 공간을 참조한다. (?)
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
 
+// var global = 100;
+
+// 지역변수를 만들어 놓고, closure 함수 안에서만 공유됨.
+// 상위 함수가 닫힌 후에도 상위 범위에 액세스할 수 있는 함수
+
+var myClosure = (function closure(init) {
+    var total = init;
+    return function() {return ++total};
+})(1);
+
+
+const funcs = [];
+
+for(var i = 1; i <= 10; i++) {
+    (function(arg) {
+        funcs.push(() => { console.log(arg) });
+    })(i)
+}
+
+for(var j = 0; j < 10; j++) {
+	funcs[j]();
+}
+
+// var myClosure = closure(1);
+document.write(myClosure() + '<br />');
+document.write(myClosure() + '<br />');
+document.write(myClosure() + '<br />');
+
 
 </script>
 </head>
